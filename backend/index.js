@@ -5,7 +5,7 @@ const cors = require('cors');
 require('dotenv').config(); 
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
 app.use(express.json());
 
@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log('Connected to MongoDB Atlas');
         app.listen(port, () => {
-            console.log(`Server is running on port ${port}`);
+            console.log(`Server is running on http://localhost:${port}/`);
         });
     })
     .catch(err => {
